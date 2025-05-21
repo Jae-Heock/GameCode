@@ -26,12 +26,14 @@ public class ButtonController : MonoBehaviour
     // ========================================================
     public void OpenEventPanel()
     {
+        GameManager.instance.PlayButtonSound();
         EventPanel.transform.localScale = Vector3.one;
         isEventOpen = true;
     }
 
     public void CloseEventPanel()
     {
+        GameManager.instance.PlayEscapeSound();
         EventPanel.transform.localScale = Vector3.zero;
         isEventOpen = false;
     }
@@ -39,12 +41,14 @@ public class ButtonController : MonoBehaviour
 
     public void OpenCouponPanel()
     {
+        GameManager.instance.PlayButtonSound();
         CouponPanel.transform.localScale = Vector3.one;
         isCouponOpen = true;
     }
 
     public void CloseCouponPanel()
     {
+        GameManager.instance.PlayEscapeSound();
         CouponPanel.transform.localScale = Vector3.zero;
         isCouponOpen = false;
     }
@@ -52,6 +56,7 @@ public class ButtonController : MonoBehaviour
 
     public void OpenSettingPanel()
     {
+        GameManager.instance.PlayButtonSound();
         Time.timeScale = 0;
         SettingPanel.transform.localScale = Vector3.one;
         isSettingOpen = true;
@@ -59,6 +64,7 @@ public class ButtonController : MonoBehaviour
 
     public void CloseSettingPanel()
     {
+        GameManager.instance.PlayEscapeSound();
         SettingPanel.transform.localScale = Vector3.zero;
         isSettingOpen = false;
         Time.timeScale = 1;

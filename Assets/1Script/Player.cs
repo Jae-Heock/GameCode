@@ -9,10 +9,12 @@ public class Player : MonoBehaviour
     Vector3 moveVec;
     Rigidbody rigid;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Animator animator;
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         rigid.constraints = RigidbodyConstraints.FreezeRotation;
+        animator = GetComponentInChildren<Animator>();
     }
 
 
@@ -43,5 +45,6 @@ public class Player : MonoBehaviour
         {
             transform.LookAt(transform.position + moveVec); // 회전
         }
+        animator.SetBool("isRun", moveVec != Vector3.zero);
     }
 }
